@@ -6,7 +6,7 @@ swfobject.addDomLoadEvent(function () {
 	var sourcePic2Url = $.Cookie('swf2');
 	if(sourcePic2Url == null)
 	{
-		sourcePic2Url = "http://www.baidu.com/img/bdlogo.png";
+		sourcePic2Url = "http://www.baidu.com/images/bdlogo.png";
 	}
     var callback = function (json) {
 		var id = this.id;
@@ -62,7 +62,7 @@ swfobject.addDomLoadEvent(function () {
 					var html = $('<div class="imgList"/>');
 					for(var i = 0; i < json.content.avatarUrls.length; i++)
 					{
-						html.append('<dl><dt>头像图片'+(i+1)+'</dt><dd><img src="' + json.content.avatarUrls[i] + '" /></dd></dl>');
+						html.append('<dl><dt>头像图片'+(i+1)+'</dt><dd><images src="' + json.content.avatarUrls[i] + '" /></dd></dl>');
 					}
 					var button = [];
 					//如果上传了原图，给个修改按钮，感受视图初始化带来的用户体验度提升
