@@ -342,11 +342,11 @@
             <li>
                 <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">邮箱 </span><span class="label label-warning pull-right">16</span></a>
                 <ul class="nav nav-second-level">
-                    <li><a class="J_menuItem" href="mailbox.html">收件箱</a>
+                    <li><a class="J_menuItem" href="{{ url('Admin/Mail/inbox') }}">收件箱</a>
                     </li>
-                    <li><a class="J_menuItem" href="mail_detail.html">查看邮件</a>
+                    <li><a class="J_menuItem" href="{{ url('Admin/Mail/mail_detail') }}">查看邮件</a>
                     </li>
-                    <li><a class="J_menuItem" href="mail_compose.html">写信</a>
+                    <li><a class="J_menuItem" href="{{ url('Admin/Mail/mail_compose') }}">写信</a>
                     </li>
                 </ul>
             </li>

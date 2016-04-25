@@ -10,15 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::group(['prefix' => '','namespace' => 'Home'],function(){
-    Route::get('/','IndexController@index');
-});
 
-Route::group(['prefix' => 'Home','namespace' => 'Home'],function(){
+$home_group = function(){
     Route::get('/','IndexController@index');
-});
+};
 
-Route::group(['prefix' => 'Admin','namespace' => 'Admin'],function(){
+$admin_group = function(){
     Route::get('/','IndexController@index');
     Route::group(['prefix' => 'Index'],function(){
         Route::get('/','IndexController@index');
@@ -26,4 +23,22 @@ Route::group(['prefix' => 'Admin','namespace' => 'Admin'],function(){
         Route::get('/about_us','IndexController@about_us');
         Route::get('/billboard','IndexController@billboard');
     });
-});
+    Route::group(['prefix' => 'Mail'],function(){
+        Route::get('/','MailController@inbox');
+        Route::get('/inbox','MailController@inbox');
+        Route::get('/index','MailController@inbox');
+        Route::get('/detail','MailController@mail_detail');
+        Route::get('/mail_detail','MailController@mail_detail');
+        Route::get('/mail_compose','MailController@mail_compose');
+    });
+};
+
+Route::group(['prefix' => '','namespace' => 'Home'],$home_group);
+
+Route::group(['prefix' => 'Home','namespace' => 'Home'],$home_group);
+
+Route::group(['prefix' => 'home','namespace' => 'Home'],$home_group);
+
+Route::group(['prefix' => 'Admin','namespace' => 'Admin'],$admin_group);
+
+Route::group(['prefix' => 'admin','namespace' => 'Admin'],$admin_group);
