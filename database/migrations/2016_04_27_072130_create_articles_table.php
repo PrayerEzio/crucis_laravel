@@ -21,7 +21,7 @@ class CreateArticlesTable extends Migration
             $table->text('tag');
             $table->text('seo_title');
             $table->text('seo_keywords');
-            $table->text('seo_ description');
+            $table->text('seo_description');
             $table->integer('views');
             $table->timestamps();
         });
